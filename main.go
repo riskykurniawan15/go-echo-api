@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"net/http"
 	"os"
-	"path"
 
 	"github.com/joho/godotenv"
 	echo "github.com/labstack/echo/v4"
@@ -13,7 +12,7 @@ import (
 func main() {
 	fmt.Println("Go Program")
 	server := echo.New()
-	server.GET(path.Join("/"), Version)
+	server.GET("/", Version)
 
 	godotenv.Load()
 	port := os.Getenv("PORT")
